@@ -1,0 +1,36 @@
+{
+    "trusted_node": "ws://${OTN_TRUSTED_NODE}",
+    "logger": {
+      "level": "debug",
+      "encoding": "console",
+      "disableCaller": true,
+      "encoderConfig": {
+         "messageKey": "msg",
+         "stacktraceKey": "st",
+         "levelKey": "level",
+         "levelEncoder": "lowercase",
+         "timeKey": "ts",
+         "timeEncoder": "iso8601"
+      }
+    },
+    "http_server": {
+        "addr": ":8080",
+        "cors": {
+            "origins": ["*"],
+            "headers": ["Content-Type"]
+        }
+    },
+    "registrar": "faucet",
+    "default_referrer": "faucet",
+    "referrer_percent": 50,
+    "ratelimit": {
+        "duration": "1m",
+        "capacity": 6
+    },
+    "secrets": {
+        "vault": {
+            "approle": "otn",
+            "path": "otn/otn-faucet/main/keys/"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "trusted_node": "ws://fullnode01.int.otn.wz-ams.lo.mobbtech.com:8090",
+    "http_server": {
+        "addr": ":8080",
+        "cors": {
+            "origins": ["*"],
+            "headers": ["Content-Type"]
+        }
+    },
+    "registrar": "faucet",
+    "default_referrer": "faucet",
+    "referrer_percent": 50,
+    "ratelimit": {
+        "duration": "1m",
+        "capacity": 6
+    },
+    "metrics": {
+        "telegraf": {
+            "address": "telegraf:8092"
+        },
+        "service": "otn-faucet"
+    },
+   "keys": [
+       "5KNsRNUNa62WFKcL6bZnVzXKEBpyQCeU2E2tQxP68GCH3PJ4DJc"
+   ]
+}
